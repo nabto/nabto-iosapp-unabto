@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SIM_ONLY=1
+#SIM_ONLY=1
 
 set -e
 
@@ -29,18 +29,19 @@ function install() {
     rm -rf build-ios-$arch
     mkdir build-ios-$arch
     cd build-ios-$arch
-    cmake -GNinja -DIOS=1 -DCMAKE_SYSTEM_NAME="GENERIC" ..
+    cmake -GNinja -DIOS=1 -DCMAKE_SYSTEM_NAME="GENERIC" -DCMAKE_BUILD_TYPE=Debug ..
     ninja
     cd ..
 }
 
-if [ -z SIM_ONLY ]; then
-    for arch in "armv7" "armv7s" "arm64"; do
-        install iphoneos $arch
-    done
-fi
+#if [ -n $SIM_ONLY ]; then
+#    for arch in "armv7" "armv7s" "arm64"; do
+#        install iphoneos $arch
+#    done
+#fi
 
 install iphonesimulator x86_64
+install iphoneos arm64
 
 mkdir -p build-lipo
 lipo -create build-ios-*/libunabto_ios_lib.a -output build-lipo/libunabto_ios_lib.a

@@ -289,6 +289,7 @@
 				DEVELOPMENT_TEAM = E55K8RCV2E;
 				HEADER_SEARCH_PATHS = ../unabto_ios_lib/src;
 				INFOPLIST_FILE = SimpleIosClientApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +312,7 @@
 				DEVELOPMENT_TEAM = E55K8RCV2E;
 				HEADER_SEARCH_PATHS = ../unabto_ios_lib/src;
 				INFOPLIST_FILE = SimpleIosClientApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
