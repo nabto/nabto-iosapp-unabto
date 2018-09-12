@@ -12,6 +12,7 @@
 		D4455BB02148BA0E00AF0BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4455BAE2148BA0E00AF0BFE /* LaunchScreen.storyboard */; };
 		D4455BB32148BA0E00AF0BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4455BB22148BA0E00AF0BFE /* main.m */; };
 		D4455BBB2148BC3300AF0BFE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4455BBA2148BC3300AF0BFE /* MainViewController.m */; };
+		D474CA1F2148F57200F9C978 /* libunabto_ios_lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D474CA1E2148F57200F9C978 /* libunabto_ios_lib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		D4455BB22148BA0E00AF0BFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4455BB92148BC3300AF0BFE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		D4455BBA2148BC3300AF0BFE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		D474CA1E2148F57200F9C978 /* libunabto_ios_lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunabto_ios_lib.a; path = "unabto_ios_lib/build-lipo/libunabto_ios_lib.a"; sourceTree = "<group>"; };
+		D474CA202148F75E00F9C978 /* unabto_app_runner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = unabto_app_runner.h; path = unabto_ios_lib/src/unabto_app_runner.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D474CA1F2148F57200F9C978 /* libunabto_ios_lib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				D4455BA22148BA0D00AF0BFE /* SimpleIosClientApp */,
 				D4455BA12148BA0D00AF0BFE /* Products */,
+				D474CA1D2148F57200F9C978 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		D4455BA22148BA0D00AF0BFE /* SimpleIosClientApp */ = {
 			isa = PBXGroup;
 			children = (
+				D474CA202148F75E00F9C978 /* unabto_app_runner.h */,
 				D4455BA32148BA0D00AF0BFE /* AppDelegate.h */,
 				D4455BA42148BA0D00AF0BFE /* AppDelegate.m */,
 				D4455BAC2148BA0E00AF0BFE /* Assets.xcassets */,
@@ -66,6 +72,14 @@
 				D4455BB22148BA0E00AF0BFE /* main.m */,
 			);
 			path = SimpleIosClientApp;
+			sourceTree = "<group>";
+		};
+		D474CA1D2148F57200F9C978 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D474CA1E2148F57200F9C978 /* libunabto_ios_lib.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +287,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E55K8RCV2E;
+				HEADER_SEARCH_PATHS = ../unabto_ios_lib/src;
 				INFOPLIST_FILE = SimpleIosClientApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/unabto_ios_lib/build-lipo",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nabto.ios.SimpleIosClientApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,10 +309,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E55K8RCV2E;
+				HEADER_SEARCH_PATHS = ../unabto_ios_lib/src;
 				INFOPLIST_FILE = SimpleIosClientApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/unabto_ios_lib/build-lipo",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nabto.ios.SimpleIosClientApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
