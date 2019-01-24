@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController <UITextFieldDelegate>
-@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UITextField *idField;
+@property (nonatomic, strong) UITextField *keyField;
 @property (nonatomic, strong) UILabel *label;
 @end
