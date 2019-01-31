@@ -3,8 +3,6 @@ project(ios_unabto)
 
 set(UNABTO_CRYPTO_MODULE generic)
 set(UNABTO_RANDOM_MODULE libtomcrypt)
-add_definitions(-DNABTO_ENABLE_UCRYPTO=1)
-add_definitions(-DNABTO_ENABLE_TCP_FALLBACK=1)
 
 set(UNABTO_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/unabto)
 include(${UNABTO_ROOT}/build/cmake/unabto_project.cmake)

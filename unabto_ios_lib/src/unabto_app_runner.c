@@ -1,3 +1,5 @@
+#include "unabto_config.h"
+
 #include <unabto/unabto_common_main.h>
 #include <unabto/unabto_app.h>
 #include <modules/util/read_hex.h>
