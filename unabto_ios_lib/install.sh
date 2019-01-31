@@ -29,7 +29,7 @@ function install() {
     rm -rf build-ios-$arch
     mkdir build-ios-$arch
     cd build-ios-$arch
-    cmake -GNinja -DIOS=1 -DCMAKE_SYSTEM_NAME="GENERIC" -DCMAKE_BUILD_TYPE=Debug ..
+    cmake -GNinja -DUNABTO_RANDOM_MODULE=generic -DUNABTO_CRYPTO_MODULE=generic -DIOS=1 -DCMAKE_SYSTEM_NAME="GENERIC" -DCMAKE_BUILD_TYPE=Debug ..
     ninja
     cd ..
 }

@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 project(ios_unabto)
 
-set(UNABTO_CRYPTO_MODULE libtomcrypt)
+set(UNABTO_CRYPTO_MODULE generic)
 set(UNABTO_RANDOM_MODULE libtomcrypt)
 add_definitions(-DNABTO_ENABLE_UCRYPTO=1)
-add_definitions(-DNABTO_ENABLE_TCP_FALLBACK=0)
+add_definitions(-DNABTO_ENABLE_TCP_FALLBACK=1)
 
 set(UNABTO_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/unabto)
 include(${UNABTO_ROOT}/build/cmake/unabto_project.cmake)
@@ -19,6 +19,8 @@ add_definitions(${unabto_definitions})
 set(src
   ${unabto_src}
   ${unabto_module_util_src}
+  ${unabto_module_tcp_fallback_src}
+  ${unabto_module_tcp_unix_src}
   ${CMAKE_CURRENT_SOURCE_DIR}/src/unabto_app_runner.c
   ${UNABTO_ROOT}/apps/stream_echo/src/stream_echo.c
   ${UNABTO_ROOT}/apps/stream_echo/src/select_impl.c
